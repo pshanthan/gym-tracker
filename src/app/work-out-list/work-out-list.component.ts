@@ -24,7 +24,7 @@ export class WorkOutListComponent implements OnInit {
   }
   deleteWorkout(id: number) {
     this.trackerService.deleteWorkout(id).subscribe(() => {
-      this.workouts = this.workouts.filter((w) => w.id != id);
+      this.workouts = this.workouts.filter((w) => w.id !== id);
     });
   }
 }
