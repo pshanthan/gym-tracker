@@ -36,7 +36,7 @@ export class WorkOutListComponent implements OnInit {
       nonNullable: true,
       validators: Validators.required,
     }),
-    completed: new FormControl('', {
+    completed: new FormControl(false, {
       nonNullable: true,
       validators: Validators.required,
     }),
