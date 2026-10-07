@@ -18,6 +18,7 @@ import { RouterLink } from '@angular/router';
 })
 export class WorkOutListComponent implements OnInit {
   constructor(private trackerService: TrackerService) {}
+  editingId: number | null = null;
   workouts: Workout[] = [];
   workoutForm = new FormGroup({
     name: new FormControl('', {
@@ -57,7 +58,7 @@ export class WorkOutListComponent implements OnInit {
       this.workouts = this.workouts.filter((w) => w.id !== id);
     });
   }
-  onSubmit() {}
+  onSubmit(w: Workout) {}
   startEdit(w: Workout) {
     this.workoutForm.patchValue({
       name: w.name,
