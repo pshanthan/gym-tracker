@@ -10,7 +10,7 @@
   <div>
     {{ workout.date }} - {{ workout.name }} - {{ workout.type }} -
     {{ workout.duration }} - {{ workout.completed }}
+    <button (click)="startEdit(workout)">EDIT</button>
+    <button (click)="deleteWorkout(workout.id!)">DELETE</button>
   </div>
-  <button (click)="startEdit(workout)">EDIT</button>
-  <button (click)="deleteWorkout(workout.id!)">DELETE</button>
 </div>
