@@ -8,9 +8,8 @@
 </form>
 <div *ngFor="let workout of workouts">
   <div>
-    {{ workout.date }} - {{ workout.name }} - {{ workout.type }} -{{
-      workout.duration
-    }}
-    -{{ workout.completed }}
+    {{ workout.date }} - {{ workout.name }} - {{ workout.type }} -
+    {{ workout.duration }} -{{ workout.completed }}
   </div>
+  <button [routerLink]="['/edit', workout.id]">EDIT</button>
 </div>
