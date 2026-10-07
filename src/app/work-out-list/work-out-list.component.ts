@@ -58,4 +58,13 @@ export class WorkOutListComponent implements OnInit {
     });
   }
   onSubmit() {}
+  startEdit(w: Workout) {
+    this.workoutForm.patchValue({
+      name: w.name,
+      type: w.type,
+      duration: String(w.duration),
+      completed: w.completed,
+      date: w.date,
+    });
+  }
 }
