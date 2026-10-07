@@ -3,6 +3,6 @@ export interface Workout {
   name: string;
   type: string;
   duration: number;
-  date: Date;
+  date: string;
   completed: boolean;
 }
