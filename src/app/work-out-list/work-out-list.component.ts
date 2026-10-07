@@ -58,11 +58,28 @@ export class WorkOutListComponent implements OnInit {
     });
   }
   onSubmit() {
+    const raw = this.workoutForm.getRawValue();
+    const workout: Workout = {
+      name: raw.name,
+      type: raw.type,
+      duration: Number(raw.duration),
+      date: raw.date,
+      completed: raw.completed,
+    };
     if (this.editingId) {
-      const found = this.workouts.filter((w) => w.id === this.editingId);
-      if (found) {
-      }
+      workout.id = this.editingId;
+      this.trackerService.updateWorkout(workout).subscribe((updated) => {
+        this.workouts = this.workouts.map((w) =>
+          w.id === updated.id ? updated : w,
+        );
+      });
+      this.editingId = null;
+    } else {
+      this.trackerService.addWorkout(workout).subscribe((created) => {
+        this.workouts = [...this.workouts, created];
+      });
     }
+    this.workoutForm.reset();
   }
   startEdit(w: Workout) {
     this.editingId = w.id ?? null;
