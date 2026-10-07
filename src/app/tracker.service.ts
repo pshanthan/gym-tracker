@@ -12,8 +12,8 @@ export class TrackerService {
   getWorkouts(): Observable<Workout[]> {
     return this.httpClient.get<Workout[]>(this.apiUrl);
   }
-  deleteWorkout(id: number): Observable<Workout> {
-    return this.httpClient.delete<Workout>(`${this.apiUrl}/${id}`);
+  deleteWorkout(id: number): Observable<void> {
+    return this.httpClient.delete<void>(`${this.apiUrl}/${id}`);
   }
   updateWorkout(w: Workout): Observable<Workout> {
     return this.httpClient.put<Workout>(`${this.apiUrl}/${w.id}`, w);
