@@ -1,0 +1,28 @@
+{
+  "workouts": [
+    {
+      "id": 1,
+      "name": "Morning Run",
+      "type": "Cardio",
+      "duration": 30,
+      "date": "2026-10-06",
+      "completed": true
+    },
+    {
+      "id": 2,
+      "name": "Chest Day",
+      "type": "Weights",
+      "duration": 60,
+      "date": "2026-10-07",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "name": "Yoga Flow",
+      "type": "Flexibility",
+      "duration": 45,
+      "date": "2026-10-05",
+      "completed": true
+    }
+  ]
+}
