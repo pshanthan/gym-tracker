@@ -8,10 +8,11 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-work-out-list',
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterLink],
   templateUrl: './work-out-list.component.html',
   styleUrl: './work-out-list.component.css',
 })
@@ -56,4 +57,5 @@ export class WorkOutListComponent implements OnInit {
       this.workouts = this.workouts.filter((w) => w.id !== id);
     });
   }
+  onSubmit() {}
 }
