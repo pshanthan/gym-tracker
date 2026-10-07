@@ -1,1 +1,16 @@
-<p>work-out-list works!</p>
+<form [formGroup]="workoutForm" (ngSubmit)="onSubmit()">
+  <input formControlName="name" />
+  <input formControlName="type" />
+  <input formControlName="duration" />
+  <input formControlName="type" />
+  <input formControlName="completed" />
+  <button type="submit">SUBMIT</button>
+</form>
+<div *ngFor="let workout of workouts">
+  <div>
+    {{ workout.date }} - {{ workout.name }} - {{ workout.type }} -{{
+      workout.duration
+    }}
+    -{{ workout.completed }}
+  </div>
+</div>
