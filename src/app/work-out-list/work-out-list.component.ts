@@ -15,14 +15,11 @@ export class WorkOutListComponent {
     this.trackerService.getWorkouts().subscribe((w) => (this.workouts = w));
   }
   addWorkout(wo: Workout) {
-    this.trackerService.addWorkout(wo).subscribe(() => {
-      [...this.workouts, wo];
+    this.trackerService.addWorkout(wo).subscribe((created) => {
+      this.workouts = [...this.workouts, wo];
     });
   }
   deleteWorkout(id: number) {
-    const current = this.workouts.values;
-    this.trackerService.deleteWorkout(id).subscribe((wo) => {
-      current = id !== this.workouts.id;
-    });
+    this.workouts = this.workouts.filter((w) => w.id != id);
   }
 }
