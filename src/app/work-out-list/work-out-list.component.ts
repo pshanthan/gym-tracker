@@ -58,8 +58,15 @@ export class WorkOutListComponent implements OnInit {
       this.workouts = this.workouts.filter((w) => w.id !== id);
     });
   }
-  onSubmit(w: Workout) {}
+  onSubmit() {
+    if (this.editingId) {
+      const found = this.workouts.filter((w) => w.id === this.editingId);
+      if (found) {
+      }
+    }
+  }
   startEdit(w: Workout) {
+    this.editingId = w.id ?? null;
     this.workoutForm.patchValue({
       name: w.name,
       type: w.type,
