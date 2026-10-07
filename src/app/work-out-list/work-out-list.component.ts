@@ -1,16 +1,45 @@
 import { Component, OnInit } from '@angular/core';
 import { TrackerService } from '../tracker.service';
 import { Workout } from '../models/Workout';
+import { CommonModule } from '@angular/common';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-work-out-list',
-  imports: [],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './work-out-list.component.html',
   styleUrl: './work-out-list.component.css',
 })
 export class WorkOutListComponent implements OnInit {
   constructor(private trackerService: TrackerService) {}
   workouts: Workout[] = [];
+  workoutForm = new FormGroup({
+    name: new FormControl('', {
+      nonNullable: true,
+      validators: Validators.required,
+    }),
+    type: new FormControl('', {
+      nonNullable: true,
+      validators: Validators.required,
+    }),
+    duration: new FormControl('', {
+      nonNullable: true,
+      validators: Validators.required,
+    }),
+    date: new FormControl('', {
+      nonNullable: true,
+      validators: Validators.required,
+    }),
+    completed: new FormControl('', {
+      nonNullable: true,
+      validators: Validators.required,
+    }),
+  });
   ngOnInit(): void {
     this.getWorkouts();
   }
