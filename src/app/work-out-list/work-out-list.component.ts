@@ -8,10 +8,11 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { GymCardComponent } from '../gym-card/gym-card.component';
 
 @Component({
   selector: 'app-work-out-list',
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, GymCardComponent],
   templateUrl: './work-out-list.component.html',
   styleUrl: './work-out-list.component.css',
 })

@@ -7,10 +7,9 @@
   <button type="submit">SUBMIT</button>
 </form>
 <div *ngFor="let workout of workouts">
-  <div>
-    {{ workout.date }} - {{ workout.name }} - {{ workout.type }} -
-    {{ workout.duration }} - {{ workout.completed }}
-    <button (click)="startEdit(workout)">EDIT</button>
-    <button (click)="deleteWorkout(workout.id!)">DELETE</button>
-  </div>
+  <app-gym-card
+    [workout]="workout"
+    (edit)="startEdit($event)"
+    (delete)="deleteWorkout($event)"
+  ></app-gym-card>
 </div>
