@@ -1,14 +1,6 @@
 {
   "workouts": [
     {
-      "name": "Morning Run",
-      "type": "Cardio",
-      "duration": 30,
-      "date": "2026-10-06",
-      "completed": false,
-      "id": "1"
-    },
-    {
       "id": "2",
       "name": "Chest Day",
       "type": "Weights",
