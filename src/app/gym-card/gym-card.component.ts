@@ -1,9 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Workout } from '../models/Workout';
+import { CommonModule } from '@angular/common';
+import { DurationPipe } from '../pipes/duration.pipe';
 
 @Component({
   selector: 'app-gym-card',
-  imports: [],
+  imports: [CommonModule, DurationPipe],
   templateUrl: './gym-card.component.html',
   styleUrl: './gym-card.component.css',
 })
