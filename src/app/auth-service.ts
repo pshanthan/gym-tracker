@@ -8,4 +8,10 @@ export class AuthService {
   isLoggedIn(): boolean {
     return this.loggedIn;
   }
+  login() {
+    this.loggedIn = true;
+  }
+  logout() {
+    this.loggedIn = false;
+  }
 }
