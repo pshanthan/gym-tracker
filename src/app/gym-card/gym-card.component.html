@@ -1,6 +1,7 @@
 <div>
-  {{ workout.date | date }} - {{ workout.name | number }} - {{ workout.type }} -
-  {{ workout.duration | duration }} - {{ workout.completed }}
+  {{ workout.date | date }} - {{ workout.name | uppercase }} -
+  {{ workout.type }} - {{ workout.duration | duration }} -
+  {{ workout.completed }}
   <button (click)="edit.emit(workout)">EDIT</button>
-  <button (click)="delete.emit(workout.id)">DELETE</button>
+  <button (click)="delete.emit(workout.id!)">DELETE</button>
 </div>
