@@ -1,1 +1,6 @@
-<p>gym-card works!</p>
+<div>
+  {{ workout.date }} - {{ workout.name }} - {{ workout.type }} -
+  {{ workout.duration }} - {{ workout.completed }}
+  <button (click)="edit.emit(workout)">EDIT</button>
+  <button (click)="delete.emit(workout.id)">DELETE</button>
+</div>
