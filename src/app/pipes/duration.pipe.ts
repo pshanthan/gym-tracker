@@ -5,6 +5,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class DurationPipe implements PipeTransform {
   transform(value: number): string {
-    return number + miles;
+    return value + `reps`;
   }
 }
